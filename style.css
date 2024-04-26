@@ -166,4 +166,34 @@ main {
   left: 0; /* Align to left edge */
   width: 100%; /* Span entire width */
 }
+/* ... other styles ... */
+
+@media (max-width: 768px) {
+  /* Styles for screens less than 768px wide (tablets and smaller) */
+  .search-container {
+    flex-direction: column; /* Stack search elements vertically */
+  }
+
+  .search-container input,
+  .search-container button {
+    width: 100%; /* Make search input and button full width */
+    margin-bottom: 1rem; /* Add space between elements */
+  }
+
+  .result {
+    width: 50%; /* Adjust result width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Styles for screens less than 480px wide (small phones) */
+  .result {
+    width: 100%; /* Make results full width on very small screens */
+  }
+}
+/* ... other styles ... */
+
+.result p {
+  text-align: justify; /* Justify text for results */
+}
 
