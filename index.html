@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Search</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-    <title>Meal Finder</title>
 </head>
-
 <body>
     <header>
-        <h1>Meal Finder</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Meal Search</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
-
     <main>
-        <div id="search-container">
-            <input type="text" id="search-input" placeholder="Search for a meal..." />
-            <button id="search-button">Search</button>
+        <div class="container">
+            <h1 class="text-center">Search for Meals</h1>
+            <form>
+                <input type="search" id="search-input" placeholder="Search for meals...">
+                <button id="search-button" type="submit">Search</button>
+            </form>
+            <div id="search-results"></div>
         </div>
-        <div id="results-container"></div>
-        <button id="show-all-button" style="display: none;">Show All</button>
     </main>
-
     <footer>
-        <p>&copy; 2024 Meal Finder</p>
+        <p>&copy; 2024 Meal Search</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
-
 </html>
