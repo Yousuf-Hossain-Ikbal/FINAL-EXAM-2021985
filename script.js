@@ -1,7 +1,7 @@
 const searchBox = document.getElementById('search-box');
 const searchButton = document.getElementById('search-button');
 const resultsContainer = document.querySelector('.results-container');
-const showAllBtn = document.createElement('button');
+
 
 let currentPage = 1;
 let totalResults = 0;
