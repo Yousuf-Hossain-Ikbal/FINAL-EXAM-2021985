@@ -66,3 +66,4 @@ document.getElementById('search-button').addEventListener('click', () => {
         fetchMeals(query);
     }
 });
+ssd
