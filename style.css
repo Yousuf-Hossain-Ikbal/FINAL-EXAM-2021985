@@ -1,199 +1,153 @@
-/* Global styles */
 body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f5f5f5;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    min-height: 100vh; /* Ensures viewport height */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
 }
 
 header, footer {
-  padding: 1rem;
-  text-align: center;
-  background-color: #333;
-  color: #fff;
+    padding: 1rem;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
 }
 
 main {
-  padding: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex: 1; /* Allows main content to fill remaining space */
 }
 
 /* Search container styles */
 .search-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Wrap elements on smaller screens */
+    gap: 1rem; /* Add spacing between elements */
+    margin-bottom: 1rem;
+}
+
+.search-container input, search-container button {
+    flex: 1; /* Flex to adjust the width */
+    padding: 0.7rem 1rem;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    outline: none;
 }
 
 .search-container input {
-  padding: 0.7rem 1rem;
-  flex: 1;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  outline: none;
+    margin-right: 1rem; /* Add space between input and button */
 }
 
 .search-container button {
-  padding: 0.7rem 2rem;
-  background-color: #1775c1; /* Blue color */
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.2s ease-in-out;
+    background-color: #1775c1; /* Blue color */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .search-container button:hover {
-  background-color: #1a82d8; /* Slightly darker blue on hover */
+    background-color: #1a82d8; /* Slightly darker blue on hover */
 }
 
 /* Results container styles */
 .results-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 /* Result card styles */
 .result {
-  width: calc(33% - 1rem);
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 4px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  position: relative; /* For hover effect */
-  overflow: hidden; /* For hover effect with image overlay */
+    width: calc(33% - 1rem);
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out; /* Smoother image hover effect */
 }
 
 .result img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 4px;
-  transition: transform 0.2s ease-in-out; /* Smoother image hover effect */
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.2s ease-in-out;
 }
 
 .result h3 {
-  margin-bottom: 0.5rem;
-  font-size: 18px;
+    margin-bottom: 0.5rem;
+    font-size: 18px;
 }
 
-/* Show All Button */
+/* Show All button */
 .show-all-btn {
-  display: block;
-  margin-top: 1rem;
-  text-align: center;
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
 }
 
 .show-all-btn button {
-  padding: 0.7rem 2rem;
-  background-color: #1775c1; /* Blue color */
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.2s ease-in-out;
+    padding: 0.7rem 2rem;
+    background-color: #1775c1; /* Blue color */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .show-all-btn button:hover {
-  background-color: #1a82d8; /* Slightly darker blue on hover */
+    background-color: #1a82d8; /* Slightly darker blue on hover */
 }
 
-/* Hover effect for results with image overlay */
+/* Hover effect */
 .result:hover img {
-  transform: scale(1.1); /* Slightly enlarge image on hover */
+    transform: scale(1.05); /* Slightly enlarge image on hover */
 }
 
-.result:hover .result-info {
-  opacity: 1; /* Show info overlay on hover */
+.result p {
+    text-align: justify; /* Justify text for results */
 }
 
-/* Info overlay on hover */
-.result-info {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-  color: #fff;
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.2s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.instructions-link {
+    text-align: center;
+    margin-top: 0.5rem;
 }
 
-.result-info p {
-  font-size: 14px;
-  margin-bottom: 0;
-}
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh; /* Ensures viewport height */
-  display: flex; /* Flexbox for vertical alignment */
-  flex-direction: column; /* Stack elements vertically */
+.instructions-link a {
+    text-decoration: none;
+    color: #1775c1;
+    font-weight: bold;
 }
 
-header,
-footer {
-  padding: 1rem;
-  text-align: center;
-  background-color: #333;
-  color: #fff;
+.instructions-link a:hover {
+    color: #1a82d8;
 }
 
-main {
-  padding: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-  flex: 1; /* Allows main content to fill remaining space */
-}
-
-/* Other styles remain the same... */
-
-.fixed-footer {
-  position: fixed; /* Fix footer to bottom */
-  bottom: 0; /* Position at absolute bottom */
-  left: 0; /* Align to left edge */
-  width: 100%; /* Span entire width */
-}
-/* ... other styles ... */
-
+/* Media queries */
 @media (max-width: 768px) {
-  /* Styles for screens less than 768px wide (tablets and smaller) */
-  .search-container {
-    flex-direction: column; /* Stack search elements vertically */
-  }
+    /* Stack search elements vertically */
+    .search-container {
+        flex-direction: column;
+    }
 
-  .search-container input,
-  .search-container button {
-    width: 100%; /* Make search input and button full width */
-    margin-bottom: 1rem; /* Add space between elements */
-  }
-
-  .result {
-    width: 50%; /* Adjust result width for smaller screens */
-  }
+    .result {
+        width: 50%; /* Adjust result width for smaller screens */
+    }
 }
 
 @media (max-width: 480px) {
-  /* Styles for screens less than 480px wide (small phones) */
-  .result {
-    width: 100%; /* Make results full width on very small screens */
-  }
+    /* Make results full width on very small screens */
+    .result {
+        width: 100%;
+    }
 }
-/* ... other styles ... */
-
-.result p {
-  text-align: justify; /* Justify text for results */
-}
-
