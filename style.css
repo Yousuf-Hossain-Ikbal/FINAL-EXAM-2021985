@@ -1,29 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meal Searcher</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Meal Searcher</h1>
-  </header>
+/* Global styles */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
 
-  <main>
-    <section class="search-container">
-      <input type="text" id="search-box" placeholder="Search for a meal">
-      <button id="search-button">Search</button>
-    </section>
-    <section class="results-container">
-      </section>
-  </main>
+header, footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+}
 
-  <footer>
-    <p>&copy; 2024 Meal Searcher</p>
-  </footer>
+main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+/* Search container styles */
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.search-container input {
+  padding: 0.7rem 1rem;
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-container button {
+  padding: 0.7rem 2rem;
+  background-color: #1775c1; /* Blue color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.search-container button:hover {
+  background-color: #1a82d8; /* Slightly darker blue on hover */
+}
+
+/* Results container styles */
+.results-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Result card styles */
+.result {
+  width: calc(33% - 1rem);
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative; /* For hover effect */
+  overflow: hidden; /* For hover effect with image overlay */
+}
+
+.result img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform 0.2s ease-in-out; /* Smoother image hover effect */
+}
+
+.result h3 {
+  margin-bottom: 0.5rem;
+  font-size: 18px;
+}
+
+/* Show All Button */
+.show-all-btn {
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.show-all-btn button {
+  padding: 0.7rem 2rem;
+  background-color: #1775c1; /* Blue color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.show-all-btn button:hover {
+  background-color: #1a82d8; /* Slightly darker blue on hover */
+}
+
+/* Hover effect for results with image overlay */
+.result:hover img {
+  transform: scale(1.1); /* Slightly enlarge image on hover */
+}
+
+.result:hover .result-info {
+  opacity: 1; /* Show info overlay on hover */
+}
+
+/* Info overlay on hover */
+.result-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  color: #fff;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-info p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensures viewport height */
+  display: flex; /* Flexbox for vertical alignment */
+  flex-direction: column; /* Stack elements vertically */
+}
+
+header,
+footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+}
+
+main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex: 1; /* Allows main content to fill remaining space */
+}
+
+/* Other styles remain the same... */
+
+.fixed-footer {
+  position: fixed; /* Fix footer to bottom */
+  bottom: 0; /* Position at absolute bottom */
+  left: 0; /* Align to left edge */
+  width: 100%; /* Span entire width */
+}
+
